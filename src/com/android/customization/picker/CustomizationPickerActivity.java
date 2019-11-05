@@ -91,7 +91,7 @@ import java.util.Map;
  */
 public class CustomizationPickerActivity extends FragmentActivity implements WallpapersUiContainer,
         CategoryFragmentHost, ThemeFragmentHost, GridFragmentHost, ClockFragmentHost,
-        BottomActionBarHost, FragmentTransactionChecker {
+        BottomActionBarHost, FragmentTransactionChecker, PermissionChangedListener {
 
     public static final String WALLPAPER_FLAVOR_EXTRA =
             "com.android.launcher3.WALLPAPER_FLAVOR";
@@ -153,6 +153,9 @@ public class CustomizationPickerActivity extends FragmentActivity implements Wal
             navigateToSection(
                     WALLPAPER_FOCUS.equals(getIntent().getStringExtra(WALLPAPER_FLAVOR_EXTRA))
                             ? R.id.nav_wallpaper : R.id.nav_theme);
+        }
+        if (!isReadExternalStoragePermissionGranted()) {
+            requestExternalStoragePermission(this);
         }
     }
 
@@ -461,6 +464,14 @@ public class CustomizationPickerActivity extends FragmentActivity implements Wal
     @Override
     public boolean isSafeToCommitFragmentTransaction() {
         return mIsSafeToCommitFragmentTransaction;
+    }
+
+    @Override
+    public void onPermissionsGranted() {
+    }
+
+    @Override
+    public void onPermissionsDenied(boolean dontAskAgain) {
     }
 
     /**
