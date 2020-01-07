@@ -260,16 +260,16 @@ public class CustomizationPickerActivity extends FragmentActivity implements Wal
     private void setUpBottomNavView() {
         mBottomNav = findViewById(R.id.main_bottom_nav);
         Menu menu = mBottomNav.getMenu();
-        DefaultCustomizationPreferences prefs =
-            new DefaultCustomizationPreferences(getApplicationContext());
+        /*DefaultCustomizationPreferences prefs =
+            new DefaultCustomizationPreferences(getApplicationContext());*/
         for (int i = menu.size() - 1; i >= 0; i--) {
             MenuItem item = menu.getItem(i);
             int id = item.getItemId();
             if (!mSections.containsKey(id)) {
                 menu.removeItem(id);
-            }  else if (!prefs.getTabVisited(getResources().getResourceName(id))) {
+            }  /*else if (!prefs.getTabVisited(getResources().getResourceName(id))) {
                 showTipDot(item);
-            }
+            }*/
         }
 
         mBottomNav.setOnNavigationItemSelectedListener(item -> {
@@ -277,7 +277,7 @@ public class CustomizationPickerActivity extends FragmentActivity implements Wal
             CustomizationSection section = mSections.get(id);
             switchFragment(section);
             section.onVisible();
-            String name = getResources().getResourceName(id);
+            /*String name = getResources().getResourceName(id);
             if (!prefs.getTabVisited(name)) {
                 prefs.setTabVisited(name);
                 hideTipDot(item);
@@ -285,7 +285,7 @@ public class CustomizationPickerActivity extends FragmentActivity implements Wal
                 if (id == R.id.nav_theme) {
                     getThemeManager().storeEmptyTheme();
                 }
-            }
+            }*/
             return true;
         });
     }
