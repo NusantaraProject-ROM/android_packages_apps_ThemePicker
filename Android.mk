@@ -33,6 +33,7 @@ LOCAL_PACKAGE_NAME := ThemePicker
 LOCAL_PRIVILEGED_MODULE := true
 LOCAL_SYSTEM_EXT_MODULE := true
 LOCAL_OVERRIDES_PACKAGES := WallpaperPicker2
+LOCAL_REQUIRED_MODULES += privapp_whitelist_com.android.customization.xml
 
 ifneq (,$(wildcard frameworks/base))
   LOCAL_PRIVATE_PLATFORM_APIS := true
@@ -51,6 +52,13 @@ LOCAL_MANIFEST_FILE := AndroidManifest.xml
 
 include $(BUILD_PACKAGE)
 
+include $(CLEAR_VARS)
+LOCAL_MODULE := privapp_whitelist_com.android.wallpaper.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_PATH := $(TARGET_OUT_ETC)/permissions
+LOCAL_SRC_FILES := $(LOCAL_MODULE)
+include $(BUILD_PREBUILT)
 
 # ==================================================
 include $(call all-makefiles-under,$(LOCAL_PATH))
