@@ -35,7 +35,7 @@
             <com.android.wallpaper.widget.PreviewPager
                 android:id="@+id/clock_preview_pager"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
                 android:background="@color/preview_pager_background"
                 app:layout_constrainedHeight="true"
                 app:layout_constraintBottom_toTopOf="@id/options_container"
@@ -50,7 +50,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/options_container"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/options_container_height"
+                android:layout_height="match_parent"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="10dp"
                 android:scrollbars="vertical"
