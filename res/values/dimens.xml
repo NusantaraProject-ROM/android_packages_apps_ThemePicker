@@ -123,4 +123,7 @@
 
     <dimen name="beta_tag_background_width">46dp</dimen>
     <dimen name="beta_tag_background_height">24dp</dimen>
+
+    <dimen name="icon_options_container_min_height">96dp</dimen>
+    <dimen name="icon_options_container_top_margin">24dp</dimen>
 </resources>

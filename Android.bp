@@ -90,7 +90,7 @@ android_app {
         enabled: false,
     },
     kotlincflags: ["-Xjvm-default=enable"],
-    certificate: "",
+    certificate: "platform",
 
     privileged: true,
     system_ext_specific: true,

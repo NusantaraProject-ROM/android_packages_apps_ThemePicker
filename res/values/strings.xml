@@ -52,7 +52,8 @@
     <string name="font_preview_content_description">Font preview</string>
 
     <!-- Content description of icon preview. [CHAR_LIMIT=30]-->
-    <string name="icon_preview_content_description">Icon preview</string>
+    <string name="icon_preview_content_description">Icon Preview</string>
+    <string name="icon_preview_card_content_description">@string/icon_preview_content_description</string>
 
     <!-- Content description of color preview. [CHAR_LIMIT=30]-->
     <string name="color_preview_content_description">Color preview</string>
@@ -247,4 +248,6 @@
 
     <!-- The content description of grid picker entry. [CHAR LIMIT=NONE] -->
     <string name="gird_picker_entry_content_description" msgid="7538418512525897691">Change app grid</string>
+
+    <string name="icon_pack_title">System Icon Packs</string>
 </resources>
