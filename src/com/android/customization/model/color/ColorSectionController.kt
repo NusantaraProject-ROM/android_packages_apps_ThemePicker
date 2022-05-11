@@ -217,7 +217,9 @@ class ColorSectionController(
                             wallpaperColors2
                         )
                     }
-                    optionsFetcher.onOptionsLoaded(colorProvider.colorBundles!!)
+                    if (colorProvider.colorBundles != null) {
+                        optionsFetcher.onOptionsLoaded(colorProvider.colorBundles!!)
+                    }
                 }
             } else {
                 optionsFetcher.onOptionsLoaded(list)
