@@ -248,6 +248,4 @@
 
     <!-- The content description of grid picker entry. [CHAR LIMIT=NONE] -->
     <string name="gird_picker_entry_content_description" msgid="7538418512525897691">Change app grid</string>
-
-    <string name="icon_pack_title">System Icon Packs</string>
 </resources>
